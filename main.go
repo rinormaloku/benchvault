@@ -26,8 +26,8 @@ func main() {
 
 		time.Sleep(200 * time.Millisecond)
 
-		milisecondsPerRequest, errsOnRead := measureAveragePerformance(client, max, steps, i)
-		fmt.Printf("Average response time: %f ms, errors: %d\n", milisecondsPerRequest, errsOnRead)
+		microseconds, errsOnRead := measureAveragePerformance(client, max, steps, i)
+		fmt.Printf("Average response time: %f microseconds, errors: %d\n", microseconds, errsOnRead)
 	}
 
 	fmt.Printf("Total errors adding %d keys was: %d\n", max, errs)

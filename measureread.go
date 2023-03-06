@@ -59,8 +59,8 @@ func measureAveragePerformance(client *api.Client, max int, steps int, currentMa
 		time.Sleep(time.Duration(rand.Intn(5)) * time.Millisecond)
 	}
 	wg.Wait()
-	milisecondsPerRequest := float64(int(totalTime.Milliseconds())) / float64(totalMeasurements)
+	microsecondsPerRequest := float64(int(totalTime.Microseconds())) / float64(totalMeasurements)
 	errorcount := counter.Load()
 
-	return milisecondsPerRequest, errorcount
+	return microsecondsPerRequest, errorcount
 }
